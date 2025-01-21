@@ -3,7 +3,7 @@ const todos = [
     title: "Initial Todo",
     description: "This is the initial todo",
     complete: false,
-  }
+  },
 ];
 
 function addTodo(title, description) {
@@ -26,7 +26,7 @@ function editTodo(index, newTitle, newDescription) {
 } else {
 console.log("invalid index. Unable to edit todo.");
 }
-
+}
 function markTodoComplete(index){
   if (index >= 0 && index < todos.length){
     todos[index].complete = true;
@@ -46,14 +46,27 @@ function app(){
   console.log('Welcome to the Todo Application');
   console.log('================================');
   // You will need to call your methods below this comment to edit the todos array
-
+  addTodo("Buy groceries", "eggs, Bread, Malt");
+  addTodo("Complete project", "Finish the TODO list project")
+  displayTodoLength();
   // You will need to call your methods above this comment to edit the todos array
-  console.log('Here is a list of your todos:');
-  // Print the length of the todos array below this comment
+  console.log("\nCurrent todos:");
+  todos.forEach((todos, index) => {
+  console.log(
+    `${index + 1}. ${todo.title} - ${todo.description} (Completed: ${todo.complete})` 
+  );
+  });
+  editTodo(0, "Buy groceries for thr week","Add water to the list");
+  markTodoComplete(1),
+  removeTodo(0);
+  displayTodoLength();
 
-  // Print the length of the todos array above this comment
-  // Iterare over the todos array and console.log each todo below this comment
-  console.log(todos);
+  console.log("/nUpdated todos:");
+  todos.forEach((todo, index) => {
+    console.log(
+      `${index + 1}. ${todo.title} - ${todo.description} (Completed: ${todo.complete})`
+    );
+  });
 }
 
 app();
