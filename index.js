@@ -13,7 +13,7 @@ console.log(`Added todo: ${title}`);
 function removeTodo(index){
 if (index >= 0 && index < todos.length) {
 const removeTodo = todos.splice(index, 1);
-console.log(`Removed todo: ${removedTodo[0].title}`);
+console.log(`Removed todo: ${removeTodo[0].title}`);
 } else {
 console.log("Invalid index. Unable to remove todo.");
 } 
@@ -51,7 +51,7 @@ function app(){
   displayTodoLength();
   // You will need to call your methods above this comment to edit the todos array
   console.log("\nCurrent todos:");
-  todos.forEach((todos, index) => {
+  todos.forEach((todo, index) => {
   console.log(
     `${index + 1}. ${todo.title} - ${todo.description} (Completed: ${todo.complete})` 
   );
